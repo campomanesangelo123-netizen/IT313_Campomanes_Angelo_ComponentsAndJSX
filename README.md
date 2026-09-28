@@ -1,56 +1,56 @@
-# Welcome to your Expo app 👋
+# IT313 LastName FirstName Components and JSX
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Student Roster Card Renderer
 
-## Get started
+This project is a React Native Expo application that demonstrates React components and JSX.
 
-1. Install dependencies
+The application displays a student roster using reusable StudentCard components. Each card shows the student's name, course, and number of units. The "Full Load" label is displayed only when the student is marked as a full-load student.
 
-   ```bash
-   npm install
-   ```
+## Component Structure
 
-2. Start the app
+### StudentRoster
 
-   ```bash
-   npx expo start
-   ```
+The StudentRoster component contains the student data and renders the list of students using the map() function.
 
-In the output, you'll find options to open the app in a
+It also displays the total number of students and includes a button that reverses the roster.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### StudentCard
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+The StudentCard component is a reusable functional component.
 
-## Get a fresh project
+It receives these props:
 
-When you're ready, run:
+- name
+- course
+- units
+- isFullLoad
 
-```bash
-npm run reset-project
-```
+The props are destructured in the function parameter.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## JSX Features Used
 
-### Other setup steps
+- JSX expressions
+- Conditional rendering
+- Props
+- Props destructuring
+- Array map()
+- Stable keys using student.id
+- Computed student count using students.length
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## Running the Project
 
-## Learn more
+Install the project dependencies:
 
-To learn more about developing your project with Expo, look at the following resources:
+npx expo install
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Start the Expo development server:
 
-## Join the community
+npx expo start
 
-Join our community of developers creating universal apps.
+The application can be opened in a web browser, Expo Go, or an emulator.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Key Experiment
+
+The project temporarily uses the array index as a key to demonstrate the difference between an index key and a stable student ID key.
+
+After testing the roster reversal, the project restores student.id as the key.
